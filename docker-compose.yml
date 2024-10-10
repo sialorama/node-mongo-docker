@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+    mongo:
+        image: mongo:latest
+        container_name: db_container
+        environment:
+            MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+            MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+            MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+        ports:
+            - "27017:27017"
+        volumes:
+            - mongo-config:/data/configdb
+            - mongo-data:/data/db
+
+    node:
+        image: node:alpine
+        container_name: node-app
+        user: ${NODE_USER}
+        working_dir: /home/node/app
+        environment:
+            - NODE_ENV=${NODE_ENV}
+        ports:
+            - 3000:${NODE_PORT}
+        volumes:
+            - ./:/home/node/app
+        depends_on:
+            - mongo
+
+volumes:
+    mongo-config:
+    mongo-data:
+
