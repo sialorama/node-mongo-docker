@@ -11,9 +11,9 @@ const collectionName = 'books'
 
 app.use(bodyParser.json())
 app.get('/', function (req, res) {
-  res.send('Welcome')
+  res.send('Welcome !')
 })
-app.get('/books', async function(req, res) {
+app.get('/get-all-books', async function(req, res) {
   await client.connect()
   const db = client.db(MONGO_DATABASE)
   const collection = db.collection(collectionName)
@@ -22,7 +22,7 @@ app.get('/books', async function(req, res) {
   client.close()
   res.json({ data: { books } })
 })
-app.post('/book', async function(req, res) {
+app.post('/add-book', async function(req, res) {
   await client.connect()
   const db = client.db(MONGO_DATABASE)
   const collection = db.collection(collectionName)
@@ -32,7 +32,7 @@ app.post('/book', async function(req, res) {
   res.json({ data: { result } })
 })
 
-app.post('/books', async function(req, res) {
+app.post('/add-many-books', async function(req, res) {
   await client.connect()
   const db = client.db(MONGO_DATABASE)
   const collection = db.collection(collectionName)
