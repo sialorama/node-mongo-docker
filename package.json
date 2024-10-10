@@ -1,5 +1,5 @@
 {
-  "name": "newmongo",
+  "name": "node_and_mongo",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -15,5 +15,19 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
-  }
+  },
+  "description": "node-mongo-docker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sialorama/node-mongo-docker.git"
+  },
+  "keywords": [
+    "node",
+    "mongo",
+    "docker"
+  ],
+  "bugs": {
+    "url": "https://github.com/sialorama/node-mongo-docker/issues"
+  },
+  "homepage": "https://github.com/sialorama/node-mongo-docker#readme"
 }

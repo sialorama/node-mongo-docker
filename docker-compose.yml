@@ -9,7 +9,7 @@ services:
             MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
             MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
         ports:
-            - "27017:27017"
+            - 27017:${MONGO_PORT}
         volumes:
             - mongo-config:/data/configdb
             - mongo-data:/data/db
@@ -23,6 +23,7 @@ services:
             - NODE_ENV=${NODE_ENV}
         ports:
             - 3000:${NODE_PORT}
+        command: "node app.js"
         volumes:
             - ./:/home/node/app
         depends_on:
