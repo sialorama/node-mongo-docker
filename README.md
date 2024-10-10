@@ -61,7 +61,16 @@ L'application expose les endpoints suivants pour gérer les opérations sur Mong
 - GET /get-all-books
 - POST /add-book
 - POST /add-many-books
+- DELETE /delete-book/:id
 ```
+
+## Tests des routes  
+
+    ```bash
+    $ npm install --save-dev jest supertest
+
+
+
 
 ```plaintext
 Contribution
