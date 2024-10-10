@@ -4,7 +4,7 @@ Cette application est un exemple d'application Node.js utilisant Express et Mong
 
 ## Architecture du projet
 
-![tree.png]('./imgs/tree.png')
+![tree.png](./imgs/tree.png)
 
 
 ## Prérequis
